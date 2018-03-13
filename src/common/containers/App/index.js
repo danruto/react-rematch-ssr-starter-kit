@@ -1,13 +1,10 @@
-import React from 'react';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
-import Home from '../Home';
-import './App.css';
+import { connect } from 'react-redux';
+import App from './App';
 
-const App = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-  </Switch>
-);
+const mapStateToProps = state => ({
+});
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
