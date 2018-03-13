@@ -6,22 +6,31 @@
     "start": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@rematch/core": "^0.5.2",
     "express": "^4.16.3",
+    "global": "^4.3.2",
     "prop-types": "^15.6.1",
     "razzle": "^0.8.12",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-intl": "^2.4.0",
+    "react-loadable": "^5.3.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "serialize-javascript": "^1.4.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15",
+    "@storybook/addons": "^3.3.15",
+    "@storybook/react": "^3.3.15",
+    "babel-core": "^6.26.0",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-import": "^2.7.0",

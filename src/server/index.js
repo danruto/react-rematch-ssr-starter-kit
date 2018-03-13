@@ -7,7 +7,7 @@ import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 
 import App from '../common/containers/App';
-import { LanguageProvider } from '../common/containers/LanguageProvider';
+import LanguageProvider from '../common/containers/LanguageProvider';
 
 import configureStore from '../common/rematch';
 import { translationMessages } from '../common/i18n';
@@ -28,7 +28,7 @@ server
         // Render the component to a string
         const markup = renderToString(
             <Provider store={store}>
-                <LanguageProvider locale="en" messages={translationMessages}>
+                <LanguageProvider messages={translationMessages}>
                     <StaticRouter context={store} location={req.url}>
                         <App />
                     </StaticRouter>

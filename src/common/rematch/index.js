@@ -1,6 +1,7 @@
 import { init } from '@rematch/core';
 
 import ProductModel from './models/product';
+import LocaleModel from './models/locale';
 
 const configureStore = initialState => init({
     redux: {
@@ -8,6 +9,7 @@ const configureStore = initialState => init({
     },
     models: {
         ProductModel,
+        LocaleModel,
     },
 });
 
