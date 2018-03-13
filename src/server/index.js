@@ -7,8 +7,10 @@ import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 
 import App from '../common/containers/App';
+import { LanguageProvider } from '../common/containers/LanguageProvider';
 
 import configureStore from '../common/rematch';
+import { translationMessages } from '../common/i18n';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST); // eslint-disable-line
 
@@ -17,7 +19,7 @@ server
     .disable('x-powered-by')
     .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
     .get('/*', (req, res) => {
-    // Compile an initial state
+        // Compile an initial state
         const preloadedState = { };
 
         // Create a new Redux store instance
@@ -26,9 +28,11 @@ server
         // Render the component to a string
         const markup = renderToString(
             <Provider store={store}>
-                <StaticRouter context={store} location={req.url}>
-                    <App />
-                </StaticRouter>
+                <LanguageProvider locale="en" messages={translationMessages}>
+                    <StaticRouter context={store} location={req.url}>
+                        <App />
+                    </StaticRouter>
+                </LanguageProvider>
             </Provider>,
         );
 

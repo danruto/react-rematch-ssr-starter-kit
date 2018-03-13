@@ -1,6 +1,9 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
 import logo from '../../assets/svg/react.svg';
 import './Home.css';
+import translationMessages from '../../translations';
 
 class Home extends React.Component {
     constructor() {
@@ -20,13 +23,7 @@ class Home extends React.Component {
                 </p>
                 <ul className="Home-resources">
                     <li>
-                        <a href="https://github.com/jaredpalmer/razzle">Docs</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/jaredpalmer/razzle/issues">Issues</a>
-                    </li>
-                    <li>
-                        <a href="https://palmer.chat">Community Slack</a>
+                        <a href="https://github.com/jaredpalmer/razzle"><FormattedMessage {...translationMessages.author} /> using Razzle</a>
                     </li>
                 </ul>
             </div>
